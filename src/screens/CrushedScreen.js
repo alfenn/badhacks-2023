@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Wrapper } from '../components/Wrapper'
-import { Button, HeroText, LText, MText, Spacer } from '../components/styled'
+import { Button, LText, MText, Spacer } from '../components/styled'
 import { Chat } from '../components/Chat';
 import styled from 'styled-components';
 

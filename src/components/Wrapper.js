@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
-import { FlexGrow, Button, BText } from './styled'
+import { BText } from './styled'
 
 const Container = styled.div`
   width: 100vw;
