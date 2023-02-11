@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const processData = (inputFile, outputFile) => {
-  let output = ''
+  let output = []
   fs.readFile(inputFile, 'utf8', (err, data) => {
     if (err) throw err;
 
@@ -11,13 +11,25 @@ const processData = (inputFile, outputFile) => {
         let currPrompt = originalData[i].title + ' ' + originalData[i].body;
         i += 1;
         while (originalData[i].hasOwnProperty('type')) {
+          let numberToSkip = originalData[i].numberOfreplies;
+          
+          if (originalData[i].username === 'AutoModerator'){
+            i += 1;
+            continue;
+          }
+          
           currResponse = originalData[i].body;
           let promptAndCompletion = {
             prompt: currPrompt,
             completion: currResponse
           };
-          output += JSON.stringify(promptAndCompletion);
+          output.push(promptAndCompletion);
           i += 1;
+          while(numberToSkip > 0 && originalData[i].hasOwnProperty('type')) {
+            numberToSkip -= 1;
+            numberToSkip += originalData[i].numberOfreplies;
+            i += 1;
+          }
         }
       }
     }
