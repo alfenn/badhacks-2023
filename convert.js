@@ -7,6 +7,7 @@ const processData = (inputFile, outputFile) => {
     const originalData = JSON.parse(data);    
     originalData.forEach((item) => {
       output += JSON.stringify(item);
+      output += '\n';
     });
     fs.writeFile(outputFile, output, 'utf8', (err) => {
       if (err) throw err;
