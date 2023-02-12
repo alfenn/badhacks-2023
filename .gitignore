@@ -27,3 +27,4 @@ yarn-error.log*
 *.ps1
 AI_info/script.ps1
 AI_info/script.ps1
+*.ps1

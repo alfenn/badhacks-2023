@@ -1,3 +1,3 @@
 
 
-$env:OPENAI_API_KEY = "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"
+$env:OPENAI_API_KEY = "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"

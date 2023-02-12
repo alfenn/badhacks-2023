@@ -16,4 +16,4 @@ const processData = (inputFile, outputFile) => {
   });
 }
 
-processData('output.json', 'output.jsonl')
+processData('output_python.json', 'output.jsonl')
