@@ -10,7 +10,10 @@ def process_data(input_file, output_file):
         for i in range(1, len(original_data)):
             if "dataType" in original_data[i].keys():
                 key = original_data[i]["url"].split('/')[7]
+<<<<<<< Updated upstream
                 curr_prompt = original_data[i]["title"] + " " + original_data[i]["body"]
+=======
+>>>>>>> Stashed changes
                 d[key] = [curr_prompt, []]
             else:
                 key = original_data[i]["url"].split('/')[5]
@@ -21,16 +24,26 @@ def process_data(input_file, output_file):
         i = 0
         while i < len(d[key][1]):
             comment = d[key][1][i]
+<<<<<<< Updated upstream
             
+=======
+            curr_prompt = original_data[i]["title"] + " " + original_data[i]["body"]
+>>>>>>> Stashed changes
             i +=1
             number_to_skip = comment["numberOfreplies"]
             
             if comment["username"] == "AutoModerator":
                 i += 1
+<<<<<<< Updated upstream
                 continue
             
             curr_response = comment["body"]
             prompt_and_completion = {"prompt": d[key][0], "completion": curr_response}
+=======
+            
+            curr_response = comment[i]["body"]
+            prompt_and_completion = {prompt: curr_prompt, completion: curr_response}
+>>>>>>> Stashed changes
             output.append(prompt_and_completion)
             i += 1
             while (number_to_skip > 0 and i < len(d[key][1])):
@@ -40,6 +53,12 @@ def process_data(input_file, output_file):
     with open(output_file, 'w', encoding='utf8') as file:
         file.write(json.dumps(output))
         print(f"Data written to {output_file}")
+<<<<<<< Updated upstream
                 
 process_data("dataset_reddit-scraper_2023-02-11_22-21-58-136.json", "output_python.json")
+=======
+        
+
+                
+>>>>>>> Stashed changes
             
