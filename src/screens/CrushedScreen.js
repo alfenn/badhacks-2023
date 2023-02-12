@@ -5,6 +5,10 @@ import { Button, LText, MText, Spacer, Row, FlexGrow } from '../components/style
 import { Chat } from '../components/Chat';
 import styled from 'styled-components';
 
+var Filter = require('bad-words'),
+    filter = new Filter();
+    filter.addWords('porn', 'grope', 'rape', 'blow job', 'blowjob', 'hang', 'torture', 'bang', 'Christian', 'Muslim');
+
 const Input = styled.div`
     display: flex;
     flex-direction: column;
@@ -119,6 +123,7 @@ export const CrushedScreen = () => {
     }
 
     function cleanText(text) {
+        filter.clean(text);
         const first_attempt = text.slice(text.indexOf('.') + 1, text.lastIndexOf('.') + 1).trim()
         if (first_attempt.length !== 0) {
             return first_attempt
@@ -159,7 +164,7 @@ export const CrushedScreen = () => {
             body: JSON.stringify({
                 prompt: text,
                 max_tokens: 200,
-                model: 'ada:ft-personal-2023-02-11-21-58-42'
+                model: 'curie:ft-personal:done-bot-2023-02-12-02-43-37'
             })
         })
         return response.json()
