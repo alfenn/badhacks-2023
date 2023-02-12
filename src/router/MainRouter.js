@@ -10,7 +10,7 @@ export const MainRouter = (props) => {
       <div id='main-screen'>
         <Routes>
           <Route path='/' element={<LandingScreen />} />
-          <Route path='/get-crushed' element={<CrushedScreen />} />
+          <Route path='/get-advice' element={<CrushedScreen />} />
         </Routes>
       </div>
     </Fragment>

@@ -7,10 +7,10 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(16, 163, 127);
+    background-color: ${props => props.ai ? 'rgb(16, 163, 127)' : 'rgb(255, 153, 51)'};
     
-    height: 30px;
-    width: 30px;
+    min-height: 30px;
+    min-width: 30px;
 `
 
 const Container = styled.div`
@@ -20,13 +20,17 @@ const Container = styled.div`
     padding: 15px;
     align-items: center;
     gap: 20px;
+    text-align: left;
 `
 
 export const Chat = ({text, ai}) => {
     return (
         <Container>
-            <Logo>
-                <img src="openai.svg" alt="openai logo" height="25"></img>
+            <Logo ai={ai}>
+                {ai ?
+                    <img src="openai.svg" alt="openai logo" height="25"></img> :
+                    <img src="person.svg" alt="user icon" height="25"></img>
+                }
             </Logo>
             <MText>{text}</MText>
         </Container>

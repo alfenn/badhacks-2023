@@ -47,7 +47,7 @@ export const Wrapper = ({children}) => {
   return (
     <Container>
       <Header>
-        <Brand onClick={() => navigate('/')}><Logo src="/logo192.png" /><BText>Crush Killer</BText></Brand>
+        <Brand onClick={() => navigate('/')}><Logo src="/logo192.png" /><BText>r/Relationship_Therapist</BText></Brand>
       </Header>
       <Content>
         {children}

@@ -33,16 +33,16 @@ export const LandingScreen = () => {
         <Wrapper>
             <Spacer />
             <Section>
-                <HeroText>Thinking about Breaking Up With Someone?</HeroText>
+                <HeroText>Having Relationship Troubles?</HeroText>
                 <SectionImg src="/breakup.jpg"></SectionImg>
             </Section>
             <Spacer />
             <Stack style={{backgroundColor: 'var(--secondary)'}}>
-                <LText>It doesn't have to be hard, Crush Killer is here to help.</LText>
+                <LText>You're not alone, r/Relationship_Therapist is here to help.</LText>
             </Stack>
             <Spacer times={4} />
             <Section>
-                <EnticeButton onClick={() => navigate('get-crushed')}>Get Your Heart Broken</EnticeButton>
+                <EnticeButton onClick={() => navigate('get-advice')}>Get Your Heart Fixed/Broken/Confused</EnticeButton>
             </Section>
         </Wrapper>
     )

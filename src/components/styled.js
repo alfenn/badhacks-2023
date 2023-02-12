@@ -23,7 +23,7 @@ export const Button = styled.button`
   border: 1px solid var(--black);
   cursor: pointer;
   color: var(--black);
-  background-color: inherit;
+  background-color: var(--primary);
   display: flex;
   flew-direction: row;
   align-items: center;
@@ -31,7 +31,7 @@ export const Button = styled.button`
   border-radius: 4px;
 
   &:hover {
-    background-color: var(--lightest-black);
+    background-color: var(--secondary);
   }
 `
 
